@@ -76,16 +76,15 @@ public final class QueryUtils
 
                 // Extract the value for the key "mag"
                 double magnitude = properties.getDouble("mag");
+                // Extract the value for the key "place"
                 String location = properties.getString("place");
+                // Extract the value for the key "time"
                 long time = properties.getLong("time");
-                //Date dateObject = new Date(timeInMilliseconds);
+                // Extract the value for the key "url"
+                String url = properties.getString("url");
 
-                //SimpleDateFormat dateFormatter = new SimpleDateFormat("MMM DD, yyyy");
-                // String dateToDisplay = dateFormatter.format(dateObject);
-
-                //Log.v("QueryUtils", "magnitude = " + magnitude + "\nlocation = " + location + "\ntime = " + timeInMilliseconds + "\n");
-
-                Earthquake earthquake = new Earthquake(magnitude, location, time);
+                // Create a new {@link Earthquake} object with the magnitude, location, time, and url from the JSON response.
+                Earthquake earthquake = new Earthquake(magnitude, location, time, url);
                 earthquakes.add(earthquake);
             }
 
